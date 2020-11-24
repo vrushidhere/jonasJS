@@ -1,10 +1,14 @@
-const countryPopulation = 33;
-//const countryPopulation = 13;
-//const countryPopulation = 130;
-const averagePopulation = 22;
+const marksWeight = 95;
+const marksHeight = 1.88;
 
-if (countryPopulation > averagePopulation) {
-    console.log('Portugal\'s population is above average');
+const johnsWeight = 85;
+const johnsHeight = 1.76;
+
+let marksBMI = marksWeight / (marksHeight ** 2);
+let johnsBMI = johnsWeight / (johnsHeight ** 2);
+
+if(marksBMI > johnsBMI){
+    console.log(`Mark's BMI ${marksBMI} is higher than John's BMI ${johnsBMI}`);
 } else {
-    console.log('Portugal\'s population is 22 million below average');
+    console.log(`Mark's BMI ${marksBMI} is lesser than John's BMI ${johnsBMI}`)
 }
