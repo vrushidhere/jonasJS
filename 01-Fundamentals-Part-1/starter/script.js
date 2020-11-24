@@ -1,7 +1,10 @@
-const description = `
-Portugal is in Europe, 
-and its 11 million
-people speak 
-portuguese`;
+const countryPopulation = 33;
+//const countryPopulation = 13;
+//const countryPopulation = 130;
+const averagePopulation = 22;
 
-console.log('template literals exaple: ' + description);
+if (countryPopulation > averagePopulation) {
+    console.log('Portugal\'s population is above average');
+} else {
+    console.log('Portugal\'s population is 22 million below average');
+}
