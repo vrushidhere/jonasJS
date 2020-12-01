@@ -4,6 +4,10 @@ const percentageOfWorld1 = function(population) {
     return ( population / 7900 ) * 100;
 }
 
+const percentageOfWorld2 = function(population) {
+    return ( population / 7900 ) * 100;
+}
+
 const ChinaPopulation = percentageOfWorld1(1900);
 const IndiaPopulation = percentageOfWorld1(1500);
 const NepalPopulation = percentageOfWorld1(12);
