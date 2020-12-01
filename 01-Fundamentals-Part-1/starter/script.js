@@ -1,15 +1,12 @@
-const worldPopulation = 7900;
+'use strict';
+const calcAverage = (firstScore, secondScore, thirdScore) => (firstScore + secondScore + thirdScore) / 3;
 
-const percentageOfWorld1 = population => (population / worldPopulation) * 100;
+const avgDolphins = calcAverage(85, 54, 41);
+const avgKoalas = calcAverage(23, 34, 27);
 
-const describePopulation = (country, population) => `${country} has ${population} million people, which is about ${percentageOfWorld1(population)}% of the world.`
+const checkWinner = function(avgDolphins, avgKoalas) {
+    (avgDolphins >= 2 * avgKoalas) ? console.log(`Dolphins wins( ${avgDolphins} vs. ${avgKoalas})`) : '';
+    (avgKoalas >= 2 * avgDolphins) ? console.log(`Koalas wins( ${avgKoalas} vs. ${avgDolphins})`) : '';
+}
 
-const ChinaPopulation = describePopulation('China', 1900);
-const IndiaPopulation = describePopulation('India', 1500);
-const NepalPopulation = describePopulation('Nepal', 12);
-
-console.log(`
-    China Description : ${ChinaPopulation},
-    India Description : ${IndiaPopulation},
-    Nepal Description : ${NepalPopulation},
-`)
+checkWinner(avgDolphins, avgKoalas);
