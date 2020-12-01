@@ -1,13 +1,15 @@
-function describeCountry(country, population, capitalCity){
-    return `${country} has ${population} million people and its capital city is ${capitalCity}`;
+const worldPopulation = 7900;
+
+const percentageOfWorld1 = function(population) {
+    return ( population / 7900 ) * 100;
 }
 
-const findlandDescription = describeCountry('Finland', 6, 'Helsinki');
-const IndiaDescription = describeCountry('India', 125, 'Delhi');
-const NepalDescription = describeCountry('Nepal', 2.5, 'Kanthmandu');
+const ChinaPopulation = percentageOfWorld1(1900);
+const IndiaPopulation = percentageOfWorld1(1500);
+const NepalPopulation = percentageOfWorld1(12);
 
 console.log(`
-${findlandDescription}, 
-${IndiaDescription}, 
-${NepalDescription}.
-`);
+    China Population : ${ChinaPopulation}%,
+    India Population : ${IndiaPopulation}%,
+    Nepal Population : ${NepalPopulation}%,
+`)
