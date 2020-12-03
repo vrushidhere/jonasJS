@@ -1,15 +1,8 @@
-const worldPopulation = 7900;
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden',
+'Russia']];
 
-const percentageOfWorld1 = population => (population / worldPopulation) * 100;
-
-const describePopulation = (country, population) => `${country} has ${population} million people, which is about ${percentageOfWorld1(population)}% of the world.`
-
-const ChinaPopulation = describePopulation('China', 1900);
-const IndiaPopulation = describePopulation('India', 1500);
-const NepalPopulation = describePopulation('Nepal', 12);
-
-console.log(`
-    China Description : ${ChinaPopulation},
-    India Description : ${IndiaPopulation},
-    Nepal Description : ${NepalPopulation},
-`)
+for (i = 0; i < listOfNeighbours.length; i++) {
+    for ( y = 0; y < listOfNeighbours[i].length; y++) {
+        console.log(`Neighbour: ${listOfNeighbours[i][y]}`)
+    }
+}
