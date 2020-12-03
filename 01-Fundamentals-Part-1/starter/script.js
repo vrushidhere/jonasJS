@@ -1,14 +1,32 @@
-const marksWeight = 95;
-const marksHeight = 1.88;
+// const marksWeight = 95;
+// const marksHeight = 1.88;
 
-const johnsWeight = 85;
-const johnsHeight = 1.76;
+// const johnsWeight = 85;
+// const johnsHeight = 1.76;
 
-let marksBMI = marksWeight / (marksHeight ** 2);
-let johnsBMI = johnsWeight / (johnsHeight ** 2);
+const marks = {
+    height : 85,
+    weight : 1.88,
+    calcBMI: function() {
+        this.bmi = this.weight / (this.height ** 2);
+        return this.bmi;
+    }    
+}
 
-if(marksBMI > johnsBMI){
-    console.log(`Mark's BMI ${marksBMI} is higher than John's BMI ${johnsBMI}`);
+const johns = {
+    height : 85,
+    weight : 1.88,
+    calcBMI: function() {
+        this.bmi = this.weight / (this.height ** 2);
+        return this.bmi
+    }    
+}
+
+marks.calcBMI();
+johns.calcBMI();
+
+if(marks.bmi > johns.bmi){
+    console.log(`Mark's BMI ${this.marks.bmi} is higher than John's BMI ${johns.bmi}`);
 } else {
-    console.log(`Mark's BMI ${marksBMI} is lesser than John's BMI ${johnsBMI}`)
+    console.log(`Mark's BMI ${marks.bmi} is lesser than John's BMI ${johns.bmi}`)
 }
