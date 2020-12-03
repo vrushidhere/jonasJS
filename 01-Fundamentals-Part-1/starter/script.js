@@ -7,3 +7,12 @@ for(i = 0; i < population.length; i++){
     percentage2.push(percentArray);
 }
 console.log(percentage2);
+
+const percentage3 = [];
+let getPop = 0;
+while(getPop < population.length) {
+    const percentArray = percentageOfWorld1(population[getPop]);
+    percentage3.push(percentArray);
+    getPop++
+}
+console.log(percentage3);
