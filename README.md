@@ -1,2 +1,0 @@
-# jonasJS
-JSLearning
