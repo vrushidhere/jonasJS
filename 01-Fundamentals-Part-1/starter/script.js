@@ -1,35 +1,12 @@
-const bill = [125, 555, 44, 33, 24, 78, 44, 900, 120, 342, 456, 34];
+'use strict';
 
-const tips = [];
+// const arr = [17, 21, 23];
+const arr = [12, 5, -5, 0, 4];
 
-const totals = [];
-
-const calcTip = function (billAmount) {
-  return billAmount >= 50 && billAmount <= 300
-    ? billAmount * 0.15
-    : billAmount * 0.2;
-};
-
-for (let i = 0; i < bill.length; i++) {
-  const tip = calcTip(bill[i]);
-  tips.push(tip);
-  totals.push(tip + bill[i]);
-}
-
-console.log(tips);
-console.log(totals);
-
-const calcAverage = function (arr) {
-  let sum = 0;
+const printForecast = function (arr) {
   for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+    console.log(`${arr[i]}℃ in ${i + 1} days`);
   }
-  return sum / arr.length;
-  console.log(sum);
 };
 
-console.log(calcAverage(totals));
-
-//console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
-
-const ling = 'only';
+printForecast(arr);
