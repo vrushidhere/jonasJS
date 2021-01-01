@@ -48,26 +48,25 @@ const restaurant = {
   },
 };
 
-const properties = Object.keys(openingHours);
+const openMonday = openingHours.mon?.open || 'closed';
+//using or operator for else condition and
+//? to check if openingHours Object have mon property
+console.log(openMonday);
 
-let openStr = `we are open on ${properties.length} days : `;
+const openSaturday = openingHours.sat?.open ?? 'closed';
+// to solve the problem with 0, which returns falsy value and returns closed even when sat property is available, we can use nullish operator
+console.log(openSaturday);
 
-for (let day of properties) {
-  openStr += `${day}, `;
-  // console.log(openStr);
+// for (let day of weekdays) {
+//   let weeklyavailable = restaurant.openingHours[day]?.open || 'closed';
+
+//   let outputStr = `restaurant is ${weeklyavailable}`;
+//   console.log(outputStr);
+// }
+
+for (let day of weekdays) {
+  const outputStr = restaurant.openingHours[day]
+    ? `restaurant is open on ${day} at ${restaurant.openingHours[day].open}`
+    : `restaurant is closed on ${day}`;
+  console.log(outputStr);
 }
-console.log(openStr);
-
-const values = Object.values(openingHours);
-
-console.log(values);
-
-const allProperties = Object.entries(openingHours); // entires provide all key values in the form of array
-for (let [propertyName, { open, close }] of allProperties) {
-  // we are using destructuring to get key values seperated variables
-  console
-    .log
-    // `Restaurant is open on ${propertyName}, it opens on: ${open}, closes on: ${close} `
-    ();
-}
-console.log(allProperties);
