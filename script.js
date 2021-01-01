@@ -45,14 +45,32 @@ const game = {
   },
 };
 
-const [players1, players2] = game.players;
-console.log(players1, players2);
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
-console.log(players1Final);
-const { team1, x: draw, team2 } = game.odds;
-console.log(team1, draw, team2);
-game.printGoals(...game.scored);
+for (let [playerNum, playerName] of game.scored.entries()) {
+  console.log(`Goal ${playerNum + 1}: ${playerName}`);
+}
+
+let odds = Object.values(game.odds);
+let average = 0;
+for (let odd of odds) average += odd;
+average /= odds.length;
+
+console.log(average);
+
+for (let [team, score] of Object.entries(game.odds)) {
+  let newStr = game[team]
+    ? `Odd of Victory ${game[team]}: ${score}`
+    : `Odd of draw: ${score}`;
+  console.log(newStr);
+}
+
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+// console.log(players1Final);
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(team1, draw, team2);
+// game.printGoals(...game.scored);
