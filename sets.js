@@ -57,37 +57,24 @@ const ordersSet = new Set([
   'Rossitto',
 ]);
 
-const rest = new Map();
+// const nameJ = new Set('jonas');
 
-rest.set('Name', 'Classico Italiano');
-rest.set('speciality', 'Pasta');
-rest.set(1, 'Itali').set(2, 'India'); //we can add multiple set, we say 'set chain'
+ordersSet.add('Garlic Bread');
+console.log(ordersSet.has('Garlic Bread'));
 
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
+ordersSet.delete('Garlic Bread');
+console.log(ordersSet.has('Garlic Bread'));
 
-rest.delete(2); // this we remove 2 key value from map
-rest.set(document.querySelector('h1'), 'Heading');
-console.log(rest, rest.size);
-// rest.clear(); // to remove map
+// ordersSet.clear();
+// console.log(ordersSet);
 
-console.log(
-  `Restaurant: ${rest.get('Name')}, Have Speciality ${rest.get(
-    'speciality'
-  )}, And they says '${rest.get(true)}'`
-);
+for (const orderItem of ordersSet) {
+  console.log(orderItem); // it doesn't repeat the items, removes duplicates
+}
 
-const time = 11;
-console.log(rest.get(time >= rest.get('open') && time < rest.get('close')));
+const staff = ['waiter', 'manager', 'waiter', 'chef', 'waiter', 'chef'];
 
-rest.set([1, 2], 'test');
-
-console.log(rest.get([1, 2])); // it will not retreive array from get method
-
-const sampleArr = [1, 2];
-rest.set(sampleArr, 'test');
-console.log(rest.get(sampleArr)); // to retrieve array we can use this method by defning variable and call it inside get method
+const uniqueStaff1 = new Set(staff); // to get array as output we use spread operator
+const uniqueStaff = [...new Set(staff)]; // to get array as output we use spread operator
+console.log(uniqueStaff);
+console.log(uniqueStaff1.size); // we can get the size of set but not after we spreaded into an array

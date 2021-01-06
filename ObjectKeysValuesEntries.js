@@ -48,46 +48,26 @@ const restaurant = {
   },
 };
 
-const ordersSet = new Set([
-  'pizza',
-  'Rossitto',
-  'Pizza',
-  'Pasta',
-  'Pizza',
-  'Rossitto',
-]);
+const properties = Object.keys(openingHours);
 
-const rest = new Map();
+let openStr = `we are open on ${properties.length} days : `;
 
-rest.set('Name', 'Classico Italiano');
-rest.set('speciality', 'Pasta');
-rest.set(1, 'Itali').set(2, 'India'); //we can add multiple set, we say 'set chain'
+for (let day of properties) {
+  openStr += `${day}, `;
+  // console.log(openStr);
+}
+console.log(openStr);
 
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
+const values = Object.values(openingHours);
 
-rest.delete(2); // this we remove 2 key value from map
-rest.set(document.querySelector('h1'), 'Heading');
-console.log(rest, rest.size);
-// rest.clear(); // to remove map
+console.log(values);
 
-console.log(
-  `Restaurant: ${rest.get('Name')}, Have Speciality ${rest.get(
-    'speciality'
-  )}, And they says '${rest.get(true)}'`
-);
-
-const time = 11;
-console.log(rest.get(time >= rest.get('open') && time < rest.get('close')));
-
-rest.set([1, 2], 'test');
-
-console.log(rest.get([1, 2])); // it will not retreive array from get method
-
-const sampleArr = [1, 2];
-rest.set(sampleArr, 'test');
-console.log(rest.get(sampleArr)); // to retrieve array we can use this method by defning variable and call it inside get method
+const allProperties = Object.entries(openingHours); // entires provide all key values in the form of array
+for (let [propertyName, { open, close }] of allProperties) {
+  // we are using destructuring to get key values seperated variables
+  console
+    .log
+    // `Restaurant is open on ${propertyName}, it opens on: ${open}, closes on: ${close} `
+    ();
+}
+console.log(allProperties);
