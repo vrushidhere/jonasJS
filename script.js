@@ -91,3 +91,31 @@ console.log(rest.get([1, 2])); // it will not retreive array from get method
 const sampleArr = [1, 2];
 rest.set(sampleArr, 'test');
 console.log(rest.get(sampleArr)); // to retrieve array we can use this method by defning variable and call it inside get method
+
+const question = new Map([
+  ['question', 'what is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
+
+console.log(question);
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+
+console.log(question.get(question.get('correct') === answer));
+
+//convert map to array
+//console.log([...question]); // using spread operator we can get keys, values
+console.log([...question.keys()]);
+console.log([...question.values()]);
